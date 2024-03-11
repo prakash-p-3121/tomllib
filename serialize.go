@@ -5,8 +5,8 @@ import (
 	"log"
 )
 
-func Serialize(content []byte, modelInst interface{}) error {
-	err := toml.Unmarshal(content, &modelInst)
+func Serialize(content []byte, modelInstPtr interface{}) error {
+	err := toml.Unmarshal(content, modelInstPtr)
 	if err != nil {
 		log.Println("Error unmarshalling TOML data:", err)
 		return err
